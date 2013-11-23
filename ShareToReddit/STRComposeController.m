@@ -13,7 +13,9 @@
 
 
 
-@implementation STRComposeController
+@implementation STRComposeController {
+    STRSubredditController *subCon;
+}
 
 - (id)init
 {
@@ -166,24 +168,32 @@
 		popover = nil;
 	}
 
-	STRSubredditController *subCon = [[STRSubredditController alloc] initWithSession:sesh];
+	subCon = [[STRSubredditController alloc] initWithSession:sesh];
 
 	NSArray *suggested = [STRSubredditController.MRU arrayByAddingObjectsFromArray:self.rootCon.suggestedSubreddits];
 	subCon.suggested = [NSOrderedSet orderedSetWithArray:suggested].array;
 
 	subCon.delegate = self;
 
+    [self.navigationController pushViewController:subCon animated:YES];
+//    [self presentViewController:subCon animated:YES completion:nil];
+
+/*
 	popover = [[UIPopoverController alloc] initWithContentViewController:subCon];
 	popover.popoverLayoutMargins = UIEdgeInsetsMake(10, 10, 90, 10);
 	[popover presentPopoverFromRect:CGRectInset(sender.bounds,40,0) inView:sender permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+*/
+
+
 }
+
 - (void)subredditController:(STRSubredditController *)ssc didSelectSubreddit:(NSString *)sr
 {
-	if( popover )
-	{
-		[popover dismissPopoverAnimated:NO];
-		popover = nil;
-	}
+	if( subCon ) {
+        [self.navigationController popViewControllerAnimated:YES];
+//        [subCon dismissViewControllerAnimated:YES completion:nil];
+        subCon = nil;
+    }
 	if( sr )
 	{
 		[STRSubredditController addToMRU:sr];

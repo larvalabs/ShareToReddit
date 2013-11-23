@@ -47,8 +47,8 @@ static NSString *imgurClientID = nil;
 	self.view.layer.cornerRadius = 10.0f;
 	self.view.layer.masksToBounds = YES;
 
-	self.view.bounds = CGRectMake( 0, 0, 600, 244 );
-	self.view.center = CGPointMake( self.view.superview.bounds.size.width*0.5f, 200 );
+//	self.view.bounds = CGRectMake( 0, 0, 600, 244 );
+//	self.view.center = CGPointMake( self.view.superview.bounds.size.width*0.5f, 200 );
 }
 
 

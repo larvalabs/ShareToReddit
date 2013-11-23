@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	#warning You should set an Imgur Client ID here for image uploads to work
+//	#warning You should set an Imgur Client ID here for image uploads to work
 	ShareToRedditController.imgurClientID = @"garbage";
 
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
