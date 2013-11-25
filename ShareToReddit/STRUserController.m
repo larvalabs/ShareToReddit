@@ -52,7 +52,7 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"user"];
-	if( !cell )
+    if( !cell )
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"user"];
 
 	NSString *user = users[indexPath.row];
