@@ -23,6 +23,10 @@
 	NSArray *								results;	
 }
 
++ (BOOL)directImageLink;
+
++ (void)setLastValueForDirectImageLink:(BOOL)value;
+
 - (id)initWithSession:(STRSession*)sesh;
 
 + (NSArray*)MRU;

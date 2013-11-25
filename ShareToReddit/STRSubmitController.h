@@ -25,6 +25,7 @@
 @property (nonatomic,retain) NSString *postTitle;
 @property (nonatomic,retain) NSString *subreddit;
 @property (nonatomic)        BOOL      nsfw;
+@property (nonatomic)        BOOL      submitDirectImageLink;
 
 @property (nonatomic,retain) IBOutlet UIProgressView *	progress;
 @property (nonatomic,retain) IBOutlet UILabel *			captchaLabel;

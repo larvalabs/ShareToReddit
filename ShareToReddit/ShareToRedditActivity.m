@@ -76,7 +76,6 @@
 		if( [item isKindOfClass:[NSURL class]] )
 		{
 			vc.url = (NSURL*)item;
-			break;
 		}
 		else if( haveImgur && [item isKindOfClass:[UIImage class]] )
 		{

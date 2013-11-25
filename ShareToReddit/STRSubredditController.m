@@ -10,6 +10,7 @@
 #import "STRSession.h"
 
 
+static NSString *const kSTRDirectImageLinkLastValue = @"ShareToReddit_DIL";
 
 @implementation STRSubredditController
 
@@ -32,6 +33,14 @@
 	NSArray *mru = [NSArray arrayWithArray:m];
 	[[NSUserDefaults standardUserDefaults] setObject:mru forKey:@"ShareToReddit_MRU"];
 	return mru;
+}
+
++ (BOOL)directImageLink {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kSTRDirectImageLinkLastValue];
+}
+
++ (void)setLastValueForDirectImageLink:(BOOL)value {
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:kSTRDirectImageLinkLastValue];
 }
 
 - (id)initWithSession:(STRSession*)session;

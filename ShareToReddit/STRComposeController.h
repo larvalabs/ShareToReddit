@@ -25,6 +25,7 @@
 @property (nonatomic,retain) IBOutlet UIImageView *		imgView;
 
 @property (nonatomic,retain) IBOutlet UIButton *		btnNSFW;
+@property (nonatomic,retain) IBOutlet UIButton *		btnDirectImageLink;
 @property (nonatomic,retain) IBOutlet UIButton *		btnSubreddit;
 @property (nonatomic,retain) IBOutlet UIButton *		btnUser;
 @property (nonatomic,retain) IBOutlet UIActivityIndicatorView *loginActivity;

@@ -34,7 +34,7 @@
 		self.navigationItem.rightBarButtonItem.enabled = NO;
 
 		self.subreddit = STRSubredditController.MRU.firstObject;
-	}
+    }
     return self;
 }
 
@@ -96,6 +96,8 @@
 
 	[self updatePostButton];
 	[self observeValueForKeyPath:@"isLoggingIn" ofObject:sesh change:nil context:nil];
+
+    self.btnDirectImageLink.selected = [STRSubredditController directImageLink];
 }
 
 
@@ -156,6 +158,7 @@
 	submit.postTitle = self.postTitle.text;
 	submit.subreddit = self.subreddit;
 	submit.nsfw = self.btnNSFW.selected;
+	submit.submitDirectImageLink = self.btnDirectImageLink.selected;
 
 	[self.rootCon pushViewController:submit animated:YES];
 }
@@ -218,6 +221,12 @@
 - (IBAction)toggleNSFW:(UIButton*)sender
 {
 	sender.selected = !sender.selected;
+}
+
+- (IBAction)toggleDirectImageLink:(UIButton*)sender
+{
+	sender.selected = !sender.selected;
+    [STRSubredditController setLastValueForDirectImageLink:sender.selected];
 }
 
 @end

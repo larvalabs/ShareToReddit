@@ -212,7 +212,7 @@
 
 	[self.progress setProgress:0 animated:NO];
 
-	if( self.postURL )
+	if( self.postURL && !self.submitDirectImageLink)
 	{
 		[self.progress setProgress:0.5f animated:YES];
 		[self submitLink];

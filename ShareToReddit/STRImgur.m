@@ -81,7 +81,8 @@
 	}
 
 	NSString *imgId = json[@"data"][@"id"];
-	NSURL *outURL = [NSURL URLWithString:[@"http://imgur.com/" stringByAppendingString:imgId]];
+    NSString *urlStr = [NSString stringWithFormat:@"http://i.imgur.com/%@.jpg", imgId];
+	NSURL *outURL = [NSURL URLWithString:urlStr];
 	completion( outURL, nil );
 }
 
