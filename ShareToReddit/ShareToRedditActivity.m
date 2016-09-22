@@ -33,7 +33,7 @@
 
 - (UIImage*)activityImage
 {
-	return [UIImage imageNamed:@"reddit7"];
+	return [UIImage imageNamed:@"redditShare"];
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
