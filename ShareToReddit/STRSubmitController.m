@@ -82,7 +82,7 @@
 - (void)fetchCaptcha:(NSString*)iden
 {
 	[sesh
-		requestData: [@"http://reddit.com/captcha/" stringByAppendingString:iden]
+		requestData: [@"https://reddit.com/captcha/" stringByAppendingString:iden]
 		post: nil
 		completion: ^( int statusCode, NSData *data, NSError *err )
 		{

@@ -229,7 +229,7 @@ static NSString *kSTRDefaultsLastUser = @"ShareToReddit_lastUser";
 	self.cookie = cookie;		//just for this request
 
 	[self
-		requestJSON: @"http://reddit.com/api/me.json"
+		requestJSON: @"https://reddit.com/api/me.json"
 		post: nil
 		completion: ^( NSDictionary *json, NSError *err )
 		{
